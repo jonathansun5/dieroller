@@ -1,0 +1,20 @@
+Package: dieroller
+Type: Package
+Title: Die Roller
+Version: 0.1.0
+Authors@R: person("Jonathan", "Sun", email = "jonathansun5@berkeley.edu",
+                  role = c("aut", "cre"))
+Maintainer: The package maintainer <jonathansun5@berkeley.edu>
+Description: Provides functions to simulate rolling a die multiple times.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Collate:
+    die.R
+    roll.R
+    plot-roll.R
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
