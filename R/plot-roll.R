@@ -5,14 +5,12 @@
 #' @param \dots arguments to be passed to/from other methods
 #' @export
 #' @examples
-#'  \dontrun{
 #'  # create a die and roll it 50 times
 #'  fair_die <- die()
 #'  set.seed(123)
 #'  fair_50rolls <- roll(fair_die, times = 50)
 #'
 #'  plot(fair_50rolls)
-#'  }
 plot.roll <- function(x, ...) {
   freqs <- frequencies(x)
   barplot(freqs, las = 1,
