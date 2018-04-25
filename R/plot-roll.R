@@ -1,8 +1,8 @@
 #' @title Plot of object roll
 #' @description Plots the relative frequencies of a series of rolls
 #' @param x an object of class \code{"die"}
-#' @param side number indicating which side of die to consider
 #' @param \dots arguments to be passed to/from other methods
+#' @import graphics
 #' @export
 #' @examples
 #'  # create a die and roll it 50 times
@@ -16,8 +16,8 @@ plot.roll <- function(x, ...) {
   barplot(freqs, las = 1,
        xlab = "sides of die",
        ylab = sprintf("relative frequencies"),
+       main = sprintf("Frequencies in a series of %s die rolls", x$total),
        names.arg = c(1:6))
-  title(sprintf("Frequencies in a series of %s die rolls", x$total))
 }
 
 

@@ -4,17 +4,17 @@
 #' @param prob vector of side probabilities
 #' @return an object of class \code{"die"}
 #' @seealso \code{\link{roll}}
+#' @import methods
 #' @export
 #' @examples
 #' # default call: creates a standard fair die
 #' fair_die <- die()
-#' 
+#'
 #' # die with non-standard sides
 #' weird_die <- die(sides = c('i', 'ii', 'iii', 'iv', 'v', 'vi'))
-#' 
+#'
 #' # create a loaded die
 #' loaded_die <- die(prob = c(0.075, 0.1, 0.125, 0.15, 0.20, 0.35))
-#' 
 die <- function(sides = c(1, 2, 3, 4, 5, 6), prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6)) {
   check_sides(sides)
   check_prob(prob)
@@ -31,7 +31,7 @@ die <- function(sides = c(1, 2, 3, 4, 5, 6), prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1
 check_sides <- function(sides) {
   if (length(sides) != 6) {
     stop("\n'sides' must be a vector of length 6")
-  } 
+  }
   if (!is.numeric(sides) & !is.character(sides)) {
     stop("\n'sides' must be a character or numeric vector")
   }

@@ -31,7 +31,6 @@ weird_die <- die(sides = c('i', 'ii', 'iii', 'iv', 'v', 'vi'))
 
 # create a loaded die
 loaded_die <- die(prob = c(0.075, 0.1, 0.125, 0.15, 0.20, 0.35))
-
 }
 \seealso{
 \code{\link{roll}}

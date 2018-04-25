@@ -10,8 +10,6 @@
 \item{x}{an object of class \code{"die"}}
 
 \item{\dots}{arguments to be passed to/from other methods}
-
-\item{side}{number indicating which side of die to consider}
 }
 \description{
 Plots the relative frequencies of a series of rolls

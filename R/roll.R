@@ -96,25 +96,25 @@ print.roll <- function(x, ...) {
 
 
 #' @export
-summary.roll <- function(x, ...) {
+summary.roll <- function(object, ...) {
   counts <- c(
-    sum(x$rolls == x$sides[1]),
-    sum(x$rolls == x$sides[2]),
-    sum(x$rolls == x$sides[3]),
-    sum(x$rolls == x$sides[4]),
-    sum(x$rolls == x$sides[5]),
-    sum(x$rolls == x$sides[6])
+    sum(object$rolls == object$sides[1]),
+    sum(object$rolls == object$sides[2]),
+    sum(object$rolls == object$sides[3]),
+    sum(object$rolls == object$sides[4]),
+    sum(object$rolls == object$sides[5]),
+    sum(object$rolls == object$sides[6])
   )
   proportions <- c(
-    sum(x$rolls == x$sides[1]) / x$total,
-    sum(x$rolls == x$sides[2]) / x$total,
-    sum(x$rolls == x$sides[3]) / x$total,
-    sum(x$rolls == x$sides[4]) / x$total,
-    sum(x$rolls == x$sides[5]) / x$total,
-    sum(x$rolls == x$sides[6]) / x$total
+    sum(object$rolls == object$sides[1]) / object$total,
+    sum(object$rolls == object$sides[2]) / object$total,
+    sum(object$rolls == object$sides[3]) / object$total,
+    sum(object$rolls == object$sides[4]) / object$total,
+    sum(object$rolls == object$sides[5]) / object$total,
+    sum(object$rolls == object$sides[6]) / object$total
   )
   freqs <- data.frame(
-    side = x$sides,
+    side = object$sides,
     count = counts,
     prop = proportions)
   obj <- list(freqs = freqs)
