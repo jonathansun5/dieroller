@@ -1,4 +1,6 @@
 ^README.md
+^\images\.*
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^devtools-flow.R
 ^README\.Rmd$

@@ -10,7 +10,7 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "images/README-"
 )
 ```
 
@@ -48,7 +48,7 @@ devtools::install_github("jonathansun5/dieroller", build_vignettes = TRUE)
 
 ## Usage
 
-```{r}
+```{r example}
 library(dieroller)
 
 # default die
@@ -66,9 +66,69 @@ roll10
 summary(roll10)
 
 
+
 # 100 rolls
 roll100 <- roll(die1, times = 100)
 
 # summary
 summary(roll100)
+
+# custom weighted die
+str_die <- die(
+  sides = c('a', 'b', 'c', 'd', 'e', 'f'),
+  prob = c(0.075, 0.1, 0.125, 0.15, 0.20, 0.35))
+
+# roll 20 times on a pseudo-fair die (remove `set.seed(123)` for different outputs)
+set.seed(123)
+str_rolls <- roll(str_die, times = 20)
+str_rolls
+
+# summary of custom weighted die
+summary(str_rolls)
+
+
+
+# 50 rolls of a pseudo-fair die (remove `set.seed(123)` for different outputs)
+fair_die <- die()
+set.seed(123)
+fair_50rolls <- roll(fair_die, times = 50)
+
+#summary of 50 fair rolls
+fair50_sum <- summary(fair_50rolls)
+fair50_sum
+
+# plot method
+plot(fair_50rolls)
+
+
+
+# roll pseudo-fair die 500 times (remove `set.seed(123)` for different outputs)
+set.seed(123)
+fair_die <- die()
+fair500 <- roll(fair_die, times = 500)
+
+# summary method
+summary(fair500)
+
+# extracting roll in position 500
+fair500[500]
+
+# replacing last roll with "1"
+fair500[500] <- 1
+fair500[500]
+
+# new summary with the modified roll
+summary(fair500)
+
+# plot method
+plot(fair500)
+
+# adding 100 rolls
+fair600 <- fair500 + 100
+
+# new summary with the modified roll plus 100 more rolls
+summary(fair600)
+
+# plot method
+plot(fair600)
 ```
