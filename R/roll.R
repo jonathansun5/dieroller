@@ -56,7 +56,9 @@ roll <- function(die, times = 1) {
 
 # private function to check vector of 'times'
 check_times <- function(times) {
-  if (times <= 0 | !is.numeric(times)) {
+  if (!is.numeric(times)) {
+    stop("\nnon-numeric argument to binary operator")
+  } else if (times <= 0 | times %% 1 != 0) {
     stop("\nargument 'times' must be a positive integer")
   } else {
     TRUE
